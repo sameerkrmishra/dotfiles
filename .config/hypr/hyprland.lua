@@ -1,0 +1,1 @@
+/home/sameer/.config/hypr/hyprland.lua

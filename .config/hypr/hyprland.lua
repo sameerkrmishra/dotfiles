@@ -222,9 +222,11 @@ hl.bind(mainMod .. " + Z", setLayout("scrolling"))
 hl.bind(mainMod .. " + F", setLayout("monocle"))
 
 -- Master layout window management
+hl.bind(mainMod .. " + Return", hl.dsp.layout("swapwithmaster"))
 hl.bind(mainMod .. " + Tab", hl.dsp.layout("cyclenext"))
 hl.bind(mainMod .. " + SHIFT + Tab", hl.dsp.layout("cycleprev"))
-hl.bind(mainMod .. " + Return", hl.dsp.layout("swapwithmaster"))
+hl.bind(mainMod .. " + CTRL + Tab", hl.dsp.layout("rollnext"))
+hl.bind(mainMod .. " + CTRL + SHIFT + Tab", hl.dsp.layout("rollprev"))
 
 -- Resize with HJKL (repeating)
 hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -10, y = 0, relative = true }), { repeating = true })

@@ -19,9 +19,9 @@ vim.opt.smartcase = true
 
 -- Keybindings
 vim.keymap.set("n", "<leader>sv", ":source $MYVIMRC<CR>", { desc = "Sources config changes" })
-vim.keymap.set("n", "<leader>l", ":nohl<CR>", {desc = "Clear highlights from the last search"})
+vim.keymap.set("n", "<leader>l", ":nohl<CR>", { desc = "Clear highlights from the last search" })
 
--- Custom functions
+-- Custom commands
 -- Highlight yanked text
 vim.api.nvim_create_autocmd("TextYankPost", {
 	callback = function()
@@ -29,3 +29,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 	end,
 })
 
+-- Format
+vim.api.nvim_create_user_command("Format", function()
+	vim.lsp.buf.format({ async = true })
+end, { desc = "Format the current file using the LSP." })
